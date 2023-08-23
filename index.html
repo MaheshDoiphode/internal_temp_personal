@@ -1,6 +1,6 @@
 <h2>Example sample data and tables to be. </h2>
 
-<style> table { border: 2px solid #333; border-collapse: collapse; } th, td { border: 1px solid #333; padding: 5px 10px; } th { background-color: #eee; } td { text-align: center; } </style>
+<style> h2 { text-align: center; margin-bottom: 20px; } p { line-height: 1.5; margin-bottom: 10px; }  table { border: 2px solid #333; border-collapse: collapse; } th, td { border: 1px solid #333; padding: 5px 10px; } th { background-color: #eee; } td { text-align: center; } </style>
 
 <p><strong>Table: Users</strong></p><table><thead><tr><th>UserID</th><th>Username</th><th>Password</th><th>RoleID</th></tr></thead><tbody><tr><td>U101</td><td>admin</td><td>hashed1</td><td>R201</td></tr><tr><td>U102</td><td>receptionist</td><td>hashed2</td><td>R202</td></tr></tbody></table>
 
@@ -17,50 +17,28 @@
 <p><strong>Table: Calendar</strong></p><table><thead><tr><th>CalendarID</th><th>HostID</th><th>BookedDate</th></tr></thead><tbody><tr><td>C1101</td><td>H1201</td><td>2023-08-23</td></tr><tr><td>C1102</td><td>H1202</td><td>2023-08-24</td></tr></tbody></table>
 
 -------------------------------------------------------------------------------------------
-
-<h2>Explaination below for the tables and the user stories. </h2>
-Table: Users
+<h2>Explanation below for the tables and the user stories.</h2> <p> <strong>Table: Users</strong>
 This table stores information about users who can access the system. Each user has a unique UserID, a Username, and a hashed Password for security. The RoleID indicates the role assigned to the user, determining their permissions within the system.
 
-Table: Roles
+</p> <p> <strong>Table: Roles</strong>
 The Roles table defines the different roles that users can have. Each role is identified by a RoleID and has a RoleName. Roles help manage access control and permissions.
 
-Table: Visitors
+</p> <p> <strong>Table: Visitors</strong>
 The Visitors table maintains records of visitors who come to the organization. It includes a unique VisitorID, the Name of the visitor, and their Contact details.
 
-Table: Visits
+</p> <p> <strong>Table: Visits</strong>
 The Visits table holds information about each visit made by a visitor. It includes a VisitID, associated VisitorID, Check-In and Check-Out times, and any FeedbackText provided by the visitor. This table enables tracking the duration of visits and collecting feedback.
 
-Table: Blacklist
+</p> <p> <strong>Table: Blacklist</strong>
 The Blacklist table stores data about visitors who have been blacklisted. Each entry has a unique BlacklistID, associated VisitorID, and a BlacklistReason describing the reason for blacklisting. This table helps in managing visitor restrictions.
 
-Table: Hosts
+</p> <p> <strong>Table: Hosts</strong>
 The Hosts table maintains records of hosts within the organization. Each host is identified by a HostID, has a Name, and is associated with a CalendarID.
 
-Table: Calendar
+</p> <p> <strong>Table: Calendar</strong>
 The Calendar table stores booking information for host calendars. It includes a CalendarID, associated HostID, and BookedDate. This table allows receptionists to schedule host availability for greeting visitors.
 
------
-APIs/User Stories below. 
-CreateAdminUser: The Users table stores admin user information, allowing the creation of new admin users.
-
-ConfigureSystemSettings: Admins can access the Roles table to manage different roles and their permissions.
-
-ManageUserAccounts: Admins use the Users and Roles tables to create, modify, and deactivate user accounts with specific roles and permissions.
-
-PreRegisterVisitor: The Visitors table holds visitor data, including those who pre-register online.
-
-OnSiteVisitorRegistration: Visitor details captured during on-site registration are stored in the Visitors table.
-
-VisitorCheckIn: Visit information is recorded in the Visits table upon visitor check-in.
-
-VisitorCheckOut: Check-out times are updated in the Visits table.
-
-NotifyHost: Host notifications are triggered based on visit records in the Visits table.
-
-GenerateVisitorAnalyticsReport: Admins can analyze visitor traffic, peak hours, and visit purposes using data from the Visits table.
-
-ManageBlacklist: Data in the Blacklist table helps in managing visitors who are blacklisted.
+</p> <h3>APIs/User Stories below.</h3> <p> CreateAdminUser: The Users table stores admin user information, allowing the creation of new admin users. </p> <p> ConfigureSystemSettings: Admins can access the Roles table to manage different roles and their permissions. </p> <p> ManageUserAccounts: Admins use the Users and Roles tables to create, modify, and deactivate user accounts with specific roles and permissions. </p> <p> PreRegisterVisitor: The Visitors table holds visitor data, including those who pre-register online. </p> <p> OnSiteVisitorRegistration: Visitor details captured during on-site registration are stored in the Visitors table. </p> <p> VisitorCheckIn: Visit information is recorded in the Visits table upon visitor check-in. </p> <p> VisitorCheckOut: Check-out times are updated in the Visits table. </p> <p> NotifyHost: Host notifications are triggered based on visit records in the Visits table. </p> <p> GenerateVisitorAnalyticsReport: Admins can analyze visitor traffic, peak hours, and visit purposes using data from the Visits table. </p> <p> ManageBlacklist: Data in the Blacklist table helps in managing visitors who are blacklisted. </p> <p> BookHostCalendar: Receptionists use the Calendar table to book host calendars for important visitors. </p> <p> ProvideFeedback: Feedback from visitors is stored in the Visits table. </p>
 
 BookHostCalendar: Receptionists use the Calendar table to book host calendars for important visitors.
 
