@@ -1,49 +1,193 @@
 
-      <img src="https://imgr.whimsical.com/thumbnails/T5ViynNphkGNCS7hPiVTW1/3tNNBnqEHrNfsQsUV55wqj" alt="Whimsical Image" />
 
 
-<h2>Example sample data and tables to be. </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models Overview</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
 
-<style> h2 { text-align: center; margin-bottom: 20px; } p { line-height: 1.5; margin-bottom: 10px; }  table { border: 2px solid #333; border-collapse: collapse; } th, td { border: 1px solid #333; padding: 5px 10px; } th { background-color: #eee; } td { text-align: center; } </style>
+<h2>API Controllers Overview</h2>
+<img src="https://imgr.whimsical.com/thumbnails/T5ViynNphkGNCS7hPiVTW1/3tNNBnqEHrNfsQsUV55wqj" alt="API Controllers Overview" width="100%">
 
-<p><strong>Table: Users</strong></p><table><thead><tr><th>UserID</th><th>Username</th><th>Password</th><th>RoleID</th></tr></thead><tbody><tr><td>U101</td><td>admin</td><td>hashed1</td><td>R201</td></tr><tr><td>U102</td><td>receptionist</td><td>hashed2</td><td>R202</td></tr></tbody></table>
 
-<p><strong>Table: Roles</strong></p><table><thead><tr><th>RoleID</th><th>RoleName</th></tr></thead><tbody><tr><td>R201</td><td>Admin</td></tr><tr><td>R202</td><td>Receptionist</td></tr></tbody></table>
+<h2>Models Overview</h2>
 
-<p><strong>Table: Visitors</strong></p><table><thead><tr><th>VisitorID</th><th>Name</th><th>Contact</th></tr></thead><tbody><tr><td>V501</td><td>John Doe</td><td>9876543210</td></tr><tr><td>V502</td><td>Jane Smith</td><td>8765432109</td></tr></tbody></table>
+<h3>Visit Table</h3>
+<table>
+    <thead>
+        <tr>
+            <th>VisitID</th>
+            <th>ParentVisitID</th>
+            <th>VisitorID</th>
+            <th>HostName</th>
+            <th>HostEmail</th>
+            <th>Purpose</th>
+            <th>ExpectedArrival</th>
+            <th>ExpectedDepart</th>
+            <th>CheckIn</th>
+            <th>CheckOut</th>
+            <th>RequestStatus</th>
+            <th>Feedback</th>
+            <th>VisitStatus</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Parent001</td>
+            <td>Visitor001</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>Meeting</td>
+            <td>2023-09-18 09:00:00</td>
+            <td>2023-09-18 17:00:00</td>
+            <td>2023-09-18 09:05:00</td>
+            <td>2023-09-18 16:55:00</td>
+            <td>Approved</td>
+            <td>Great Visit!</td>
+            <td>Completed</td>
+        </tr>
+    </tbody>
+</table>
 
-<p><strong>Table: Visits</strong></p><table><thead><tr><th>VisitID</th><th>VisitorID</th><th>CheckInTime</th><th>CheckOutTime</th><th>FeedbackText</th></tr></thead><tbody><tr><td>V701</td><td>V501</td><td>2023-08-23 09:00:00</td><td>2023-08-23 12:00:00</td><td>Good experience</td></tr><tr><td>V702</td><td>V502</td><td>2023-08-23 10:30:00</td><td>2023-08-23 13:30:00</td><td>Helpful receptionists</td></tr></tbody></table>
+<h3>User Table</h3>
+<table>
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>UserName</th>
+            <th>UserEmail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>U001</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+        </tr>
+    </tbody>
+</table>
 
-<p><strong>Table: Blacklist</strong></p><table><thead><tr><th>BlacklistID</th><th>VisitorID</th><th>BlacklistReason</th></tr></thead><tbody><tr><td>B1001</td><td>V502</td><td>Inappropriate behavior</td></tr></tbody></table>
+<h3>Visitor Table</h3>
+<table>
+    <thead>
+        <tr>
+            <th>VisitorID</th>
+            <th>Title</th>
+            <th>FName</th>
+            <th>LName</th>
+            <th>VisitorEmail</th>
+            <th>VisitorNumber</th>
+            <th>VisitorAddress</th>
+            <th>IdentityType</th>
+            <th>IdentityNumber</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Visitor001</td>
+            <td>Mr.</td>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>1234567890</td>
+            <td>123 Street, City</td>
+            <td>Passport</td>
+            <td>XYZ123456</td>
+            <td>ImageBytes</td>
+        </tr>
+    </tbody>
+</table>
 
-<p><strong>Table: Hosts</strong></p><table><thead><tr><th>HostID</th><th>Name</th><th>CalendarID</th></tr></thead><tbody><tr><td>H1201</td><td>Alex Johnson</td><td>C1101</td></tr><tr><td>H1202</td><td>Maria Gupta</td><td>C1102</td></tr></tbody></table>
+<h3>URLManagement Table</h3>
+<table>
+    <thead>
+        <tr>
+            <th>URLID</th>
+            <th>VisitID</th>
+            <th>ExpirationTime</th>
+            <th>GenerateDate</th>
+            <th>URLStatus</th>
+            <th>URLType</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>URL001</td>
+            <td>1</td>
+            <td>2023-09-20 10:00:00</td>
+            <td>2023-09-18 09:00:00</td>
+            <td>Active</td>
+            <td>Check-in</td>
+        </tr>
+    </tbody>
+</table>
 
-<p><strong>Table: Calendar</strong></p><table><thead><tr><th>CalendarID</th><th>HostID</th><th>BookedDate</th></tr></thead><tbody><tr><td>C1101</td><td>H1201</td><td>2023-08-23</td></tr><tr><td>C1102</td><td>H1202</td><td>2023-08-24</td></tr></tbody></table>
+<h3>SecondaryInfo Table</h3>
+<table>
+    <thead>
+        <tr>
+            <th>SecondaryInfoID</th>
+            <th>VisitorID</th>
+            <th>AlternateEmail</th>
+            <th>AlternateContact</th>
+            <th>AlternateEmergencyContact</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>SI001</td>
+            <td>Visitor001</td>
+            <td>john.alt@example.com</td>
+            <td>0987654321</td>
+            <td>1122334455</td>
+        </tr>
+    </tbody>
+</table>
 
--------------------------------------------------------------------------------------------
-<h2>Explanation below for the tables and the user stories.</h2> <p> <strong>Table: Users</strong>
-This table stores information about users who can access the system. Each user has a unique UserID, a Username, and a hashed Password for security. The RoleID indicates the role assigned to the user, determining their permissions within the system.
+<h3>Notification Table</h3>
+<table>
+    <thead>
+        <tr>
+            <th>NotificationID</th>
+            <th>VisitID</th>
+            <th>Message</th>
+            <th>NotificationType</th>
+            <th>NotificationGenerated</th>
+            <th>NotificationStatus</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Notif001</td>
+            <td>1</td>
+            <td>Welcome to our office!</td>
+            <td>Email</td>
+            <td>2023-09-18 09:05:00</td>
+            <td>Sent</td>
+        </tr>
+    </tbody>
+</table>
 
-</p> <p> <strong>Table: Roles</strong>
-The Roles table defines the different roles that users can have. Each role is identified by a RoleID and has a RoleName. Roles help manage access control and permissions.
-
-</p> <p> <strong>Table: Visitors</strong>
-The Visitors table maintains records of visitors who come to the organization. It includes a unique VisitorID, the Name of the visitor, and their Contact details.
-
-</p> <p> <strong>Table: Visits</strong>
-The Visits table holds information about each visit made by a visitor. It includes a VisitID, associated VisitorID, Check-In and Check-Out times, and any FeedbackText provided by the visitor. This table enables tracking the duration of visits and collecting feedback.
-
-</p> <p> <strong>Table: Blacklist</strong>
-The Blacklist table stores data about visitors who have been blacklisted. Each entry has a unique BlacklistID, associated VisitorID, and a BlacklistReason describing the reason for blacklisting. This table helps in managing visitor restrictions.
-
-</p> <p> <strong>Table: Hosts</strong>
-The Hosts table maintains records of hosts within the organization. Each host is identified by a HostID, has a Name, and is associated with a CalendarID.
-
-</p> <p> <strong>Table: Calendar</strong>
-The Calendar table stores booking information for host calendars. It includes a CalendarID, associated HostID, and BookedDate. This table allows receptionists to schedule host availability for greeting visitors.
-
-</p> <h3>APIs/User Stories below.</h3> <p> CreateAdminUser: The Users table stores admin user information, allowing the creation of new admin users. </p> <p> ConfigureSystemSettings: Admins can access the Roles table to manage different roles and their permissions. </p> <p> ManageUserAccounts: Admins use the Users and Roles tables to create, modify, and deactivate user accounts with specific roles and permissions. </p> <p> PreRegisterVisitor: The Visitors table holds visitor data, including those who pre-register online. </p> <p> OnSiteVisitorRegistration: Visitor details captured during on-site registration are stored in the Visitors table. </p> <p> VisitorCheckIn: Visit information is recorded in the Visits table upon visitor check-in. </p> <p> VisitorCheckOut: Check-out times are updated in the Visits table. </p> <p> NotifyHost: Host notifications are triggered based on visit records in the Visits table. </p> <p> GenerateVisitorAnalyticsReport: Admins can analyze visitor traffic, peak hours, and visit purposes using data from the Visits table. </p> <p> ManageBlacklist: Data in the Blacklist table helps in managing visitors who are blacklisted. </p> <p> BookHostCalendar: Receptionists use the Calendar table to book host calendars for important visitors. </p> <p> ProvideFeedback: Feedback from visitors is stored in the Visits table. </p>
-
-BookHostCalendar: Receptionists use the Calendar table to book host calendars for important visitors.
-
-ProvideFeedback: Feedback from visitors is stored in the Visits table.
+</body>
+</html>
